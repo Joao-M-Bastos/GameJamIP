@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,23 @@ using UnityEngine;
 public class CaminhoScript : MonoBehaviour
 {
     [SerializeField]Transform transformA, transformB;
-    public void GotOnPoints(Enemy enemy)
+
+    private void Awake()
     {
-        enemy.isReturning = !enemy.isReturning;
+        
+    }
+    public void GotOnPointsInicial(Enemy enemy)
+    {
+        enemy.isReturning = false;
 
-        if (!enemy.isReturning)
-        {
-            enemy.enemyBehaviour.SetDestination(transformB.position);
-        }
-        else
-        {
-            enemy.enemyBehaviour.SetDestination(transformA.position);
-        }
+        enemy.enemyBehaviour.SetDestination(transformB.position);
+    }
 
+
+    public void GotOnPointsFinal(Enemy enemy)
+    {
+        enemy.isReturning = true;
+
+        enemy.enemyBehaviour.SetDestination(transformA.position);
     }
 }
