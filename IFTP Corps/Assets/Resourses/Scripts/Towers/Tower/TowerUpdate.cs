@@ -17,7 +17,6 @@ public class TowerUpdate : MonoBehaviour
 
     private void Update()
     {
-
         closestEnemy = tower.towerBehaviour.GetCloseEnemies(this.transform);
 
         if (closestEnemy != null)

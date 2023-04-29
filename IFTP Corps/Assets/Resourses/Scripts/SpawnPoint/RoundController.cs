@@ -1,18 +1,59 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RoundController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject pirate;
+
+    int roundNumber;
+
+    SpawnBehaviour spawnBehaviour;
+
+    bool hasStarted;
+
+    private void Awake()
     {
-        
+        roundNumber = 0;
+        hasStarted = false;
+        spawnBehaviour = GetComponent<SpawnBehaviour>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if(!hasStarted && spawnBehaviour.amountToSpawn > 0)
+            hasStarted = true;
+        
+        if(hasStarted && spawnBehaviour.amountToSpawn < 1 && NumOfEnemiesAlive.getNumOfEnemiesAlive() < 1)
+        {
+            GenerateRound();
+            hasStarted = false;
+        }
+    }
+
+    private void Start()
+    {
+        GenerateRound();
+    }
+
+    private void GenerateRound()
+    {
+        roundNumber++;
+        switch (roundNumber)
+        {
+            case 1:
+                spawnBehaviour.GerarRound(pirate, 5, 1f, 0);
+                break;
+            case 2:
+                spawnBehaviour.GerarRound(pirate, 3, 2f,0);
+                spawnBehaviour.GerarRound(pirate, 3, 2f, 1);
+                break;
+            case 3:
+                spawnBehaviour.GerarRound(pirate, 5, 2f, 0);
+                break;
+
+        }
         
     }
 }

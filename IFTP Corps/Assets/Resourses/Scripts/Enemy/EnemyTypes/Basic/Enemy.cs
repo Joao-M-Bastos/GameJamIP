@@ -18,8 +18,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        enemyNavMesh = GetComponent<NavMeshAgent>();
-        isReturning = false;
+        //enemyNavMesh = GetComponent<NavMeshAgent>();
         //enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
     }
 
@@ -30,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     public void SelfDestruction()
     {
+        NumOfEnemiesAlive.Subtract();
         Destroy(this.gameObject);
     }
 }

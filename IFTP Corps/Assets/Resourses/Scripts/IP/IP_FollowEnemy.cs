@@ -7,7 +7,7 @@ public class IP_FollowEnemy : MonoBehaviour
 {
     Enemy enemy;
 
-    Transform? transformToFollow;
+    Transform transformToFollow;
 
     private void OnTriggerStay(Collider collision)
     {

@@ -10,7 +10,6 @@ public class PointA : MonoBehaviour
     private void Awake()
     {
         caminhoScript = GameObject.Find("Points").GetComponent<CaminhoScript>();
-        
     }
 
     private void OnTriggerEnter(Collider collision)

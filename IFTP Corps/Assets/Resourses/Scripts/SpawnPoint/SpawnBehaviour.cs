@@ -4,31 +4,28 @@ using UnityEngine;
 
 public class SpawnBehaviour : MonoBehaviour
 {
-    [SerializeField] GameObject pirate;
+    public int amountToSpawn;
 
-    private void Awake()
+    public void GerarRound(GameObject enemy, int amount, float inteval, float cooldown)
     {
-        GerarRound(pirate, 5,1f);
+        this.amountToSpawn += amount;
+        StartCoroutine(WaitToSpawn(enemy, amount, inteval, cooldown));
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator WaitToSpawn(GameObject enemy, int amount, float inteval, float cooldown)
     {
-        
+        yield return new WaitForSeconds(cooldown);
+        Spawnar(enemy, amount, inteval);
     }
 
-    public void GerarRound(GameObject enemy, int amont, float cooldown)
+    private IEnumerator Spawnar(GameObject enemy, int amount, float inteval)
     {
-        StartCoroutine(Spawnar(enemy, amont, cooldown));
-    }
-
-    private IEnumerator Spawnar(GameObject enemy, int amont, float cooldown)
-    {
-        
-        for(int i = 0; i < amont; i++)
+        for(int i = 0; i < amount; i++)
         {
-            yield return new WaitForSeconds(cooldown);
-            Instantiate(enemy);
+            yield return new WaitForSeconds(inteval);
+            NumOfEnemiesAlive.Add();
+            this.amountToSpawn--;
+            Instantiate(enemy,this.transform.position, this.transform.rotation);
         }
     }
 

@@ -12,7 +12,7 @@ public abstract class TowerBehaviour
 
     protected float cooldown;
 
-    GameObject[] allTowersInScreen, allTowersInRenge;
+    GameObject[] allEnemiesInScreen, allEnemiesInRenge;
 
     public TowerBehaviour(Tower tower)
     {
@@ -41,17 +41,16 @@ public abstract class TowerBehaviour
 
     public GameObject GetCloseEnemies(Transform towerTransform)
     {
-        GameObject[] allTowers = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject[] closeEnemies = null;
         int temp = 0;
 
-        if (allTowers.Length == 0)
+        if (allEnemies.Length == 0)
             return null;
 
-        for (int i = 0; i < allTowers.Length; i++)
+        for (int i = 0; i < allEnemies.Length; i++)
         {
-            
-            if (Vector2.Distance(towerTransform.position, allTowers[i].transform.position) < tower.distanceOfView)
+            if (Vector3.Distance(towerTransform.position, allEnemies[i].transform.position) < tower.distanceOfView)
             {
                 temp++;
             }
@@ -61,20 +60,22 @@ public abstract class TowerBehaviour
             return null;
 
         closeEnemies = new GameObject[temp];
+        temp = 0; 
 
-        for (int i = 0; i < allTowers.Length; i++)
+        for (int i = 0; i < allEnemies.Length; i++)
         {
             
-            if (Vector2.Distance(towerTransform.position, allTowers[i].transform.position) < tower.distanceOfView)
+            if (Vector3.Distance(towerTransform.position, allEnemies[i].transform.position) < tower.distanceOfView)
             {
-                closeEnemies[i] = allTowers[i];
+                closeEnemies[temp] = allEnemies[i];
+                temp++;
             }
         }
 
         
 
-        allTowersInScreen = allTowers;
-        allTowersInRenge = closeEnemies;
+        allEnemiesInScreen = allEnemies;
+        allEnemiesInRenge = closeEnemies;
         return GetClosestEnemy(closeEnemies);
     }
 

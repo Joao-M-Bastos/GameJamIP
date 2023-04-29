@@ -39,6 +39,10 @@ public abstract class EnemyBehaviour
     {
         this.enemyNavMesh.isStopped = true;
     }
+    public void HasMadeIt()
+    {
+        enemy.SelfDestruction();
+    }
 
     public void Die()
     {
