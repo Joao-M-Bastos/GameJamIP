@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,11 @@ public class Enemy : MonoBehaviour
         enemyNavMesh = GetComponent<NavMeshAgent>();
         isReturning = false;
         //enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
+    }
+
+    public void takeAHit(int dmg = 1)
+    {
+        life -= dmg;
     }
 
     public void SelfDestruction()

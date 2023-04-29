@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1754678279166458031}
   m_Layer: 0
   m_Name: Pirate
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyNavMesh: {fileID: 0}
   speed: 5
+  projectSpeed: 0
   life: 5
   isReturning: 1
   invisiable: 0
