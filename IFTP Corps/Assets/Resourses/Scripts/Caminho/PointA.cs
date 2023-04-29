@@ -6,11 +6,12 @@ public class PointA : MonoBehaviour
 {
     Enemy enemy;
     [SerializeField] CaminhoScript caminhoScript;
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.TryGetComponent<Enemy>(out enemy))
         {
-            caminhoScript.GetFromPointA(enemy, this.transform.position);
+            caminhoScript.GetFromPointA(enemy);
         }
     }
 }

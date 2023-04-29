@@ -21,7 +21,7 @@ public class EnemyStateControlor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ChangeState(attackState);
+        ChangeState(walkState);
     }
 
     public void ChangeState(EnemyBaseState nextState)

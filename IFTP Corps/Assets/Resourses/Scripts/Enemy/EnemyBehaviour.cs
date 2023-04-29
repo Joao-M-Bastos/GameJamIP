@@ -2,27 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyBehaviour : EBehaviour
 {
     Enemy enemy;
 
     public Vector3 goToPostition;
+    public NavMeshAgent enemyNavMesh;
     
-    public EnemyBehaviour(Enemy enemy)
+    public EnemyBehaviour(Enemy enemy, NavMeshAgent nv)
     {
+        this.enemyNavMesh = nv;
         this.enemy = enemy;
     }
 
-    public void WalkToDestination(Vector3 position)
+    public void WalkToDestination()
     {
-        enemy.transform.LookAt(position, enemy.transform.up);
-        MoveFoward();
-    }
-
-    private void MoveFoward()
-    {
-        enemy.transform.position += enemy.transform.forward * enemy.speed * Time.deltaTime;
+        this.enemyNavMesh.SetDestination(goToPostition);
     }
 
     public void SetDestination(Vector3 position)
