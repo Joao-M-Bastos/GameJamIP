@@ -27,5 +27,8 @@ public class EnemyWalkingState : EnemyBaseState
         {
             eC.ChangeState(eC.attackState);
         }
+        if (e.willDie()) 
+            e.Die();
+       
     }
 }

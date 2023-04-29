@@ -76,9 +76,9 @@ NavMeshAgent:
   m_GameObject: {fileID: 4193535776417774189}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.11
+  m_Radius: 0.02
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efe8ce7a3031a149a97f0af1c98e393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  enemyNavMesh: {fileID: 0}
+  speed: 5
+  life: 5
   isReturning: 1
   invisiable: 0
   indestrutive: 0
@@ -117,7 +119,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 582af4ffe77707044b5bcc23201166d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
 --- !u!1 &4426193519431384284
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1abc50a3e3311294a965b0e6129bf9ff, type: 2}
+  - {fileID: 2100000, guid: 41ec62f40a98c124a8191c45d4ff7e11, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

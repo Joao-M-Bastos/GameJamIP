@@ -37,13 +37,19 @@ public abstract class EnemyBehaviour
 
     public void StopDestination()
     {
-        Debug.Log("a");
         this.enemyNavMesh.isStopped = true;
     }
 
     public void Die()
     {
-        throw new System.NotImplementedException();
+        enemy.SelfDestruction();
+    }
+    public bool willDie()
+    {
+        if (enemy.life < 1)
+            return true;
+
+        return false;
     }
 
     public abstract void Special();

@@ -6,9 +6,11 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public EnemyBehaviour enemyBehaviour;
-    NavMeshAgent enemyNavMesh;
+    public NavMeshAgent enemyNavMesh;
 
     public float speed;
+
+    public int life;
 
     public bool isReturning, invisiable, indestrutive;
 
@@ -18,5 +20,10 @@ public class Enemy : MonoBehaviour
         enemyNavMesh = GetComponent<NavMeshAgent>();
         isReturning = false;
         //enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
+    }
+
+    public void SelfDestruction()
+    {
+        Destroy(this.gameObject);
     }
 }
