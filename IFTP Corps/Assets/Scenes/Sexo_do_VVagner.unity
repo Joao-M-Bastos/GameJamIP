@@ -355,6 +355,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: mapa blockagem
       objectReference: {fileID: 0}
+    - target: {fileID: 4552077183414462411, guid: 03af93d24ea564b40abf8132f0a02672,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571117897148201728, guid: 03af93d24ea564b40abf8132f0a02672,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03af93d24ea564b40abf8132f0a02672, type: 3}
 --- !u!4 &652624877 stripped

@@ -6,16 +6,23 @@ public class EnemyAttackState : EnemyBaseState
 {
     public void EndState(EnemyStateControlor eC, EnemyBehaviour e)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public void StartState(EnemyStateControlor eC, EnemyBehaviour e)
     {
-        throw new System.NotImplementedException();
+        e.Special();
     }
 
     public void UpdateState(EnemyStateControlor eC, EnemyBehaviour e)
     {
-        throw new System.NotImplementedException();
+        if (e.HasEndedSpecial())
+        {
+            eC.ChangeState(eC.walkState);
+        }
+        else
+        {
+            e.Special();
+        }
     }
 }

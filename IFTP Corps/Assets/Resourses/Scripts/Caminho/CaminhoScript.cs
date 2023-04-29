@@ -5,20 +5,18 @@ using UnityEngine;
 public class CaminhoScript : MonoBehaviour
 {
     [SerializeField]Transform transformA, transformB;
-    public void GetFromPointA(Enemy enemy)
+    public void GotOnPoints(Enemy enemy)
     {
+        enemy.isReturning = !enemy.isReturning;
+
         if (!enemy.isReturning)
         {
             enemy.enemyBehaviour.SetDestination(transformB.position);
         }
-    }
-
-    public void GetFromPointB(Enemy enemy)
-    {
-        if (enemy.isReturning)
+        else
         {
-            Debug.Log("AS");
             enemy.enemyBehaviour.SetDestination(transformA.position);
         }
+
     }
 }

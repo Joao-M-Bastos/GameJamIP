@@ -7,11 +7,12 @@ public class EnemyWalkingState : EnemyBaseState
     
     public void EndState(EnemyStateControlor eC, EnemyBehaviour e)
     {
-        
+        e.StopDestination();
     }
 
     public void StartState(EnemyStateControlor eC, EnemyBehaviour e)
     {
+        e.unStopDestination();
         e.WalkToDestination();
     }
 
@@ -19,7 +20,12 @@ public class EnemyWalkingState : EnemyBaseState
     {
         if (e.goToPostition != e.enemyNavMesh.destination)
         {
-            e.SetDestination(e.goToPostition);
+            e.WalkToDestination();
+        }
+
+        if (e.CanSpecial())
+        {
+            eC.ChangeState(eC.attackState);
         }
     }
 }

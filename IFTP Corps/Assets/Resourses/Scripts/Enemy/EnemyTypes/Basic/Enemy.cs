@@ -10,13 +10,13 @@ public class Enemy : MonoBehaviour
 
     public float speed;
 
-    public bool isReturning;
+    public bool isReturning, invisiable, indestrutive;
 
     // Start is called before the first frame update
     void Awake()
     {
         enemyNavMesh = GetComponent<NavMeshAgent>();
         isReturning = false;
-        enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
+        //enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
     }
 }

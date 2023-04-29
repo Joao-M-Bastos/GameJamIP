@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PointA : MonoBehaviour
+public class PointOfReturn : MonoBehaviour
 {
     Enemy enemy;
     [SerializeField] CaminhoScript caminhoScript;
@@ -11,7 +11,7 @@ public class PointA : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent<Enemy>(out enemy))
         {
-            caminhoScript.GetFromPointA(enemy);
+            caminhoScript.GotOnPoints(enemy);
         }
     }
 }

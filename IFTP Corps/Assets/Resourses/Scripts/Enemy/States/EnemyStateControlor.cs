@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyStateControlor : MonoBehaviour
 {
-    public Enemy enemy;
+    private Enemy enemy;
 
     #region State Machine
     EnemyBaseState currentState;
@@ -29,6 +29,7 @@ public class EnemyStateControlor : MonoBehaviour
         currentState?.EndState(this, enemy.enemyBehaviour);
         currentState = nextState;
         nextState.StartState(this, enemy.enemyBehaviour);
+        
     }
 
     // Update is called once per frame
