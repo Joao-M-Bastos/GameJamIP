@@ -6,6 +6,7 @@ using UnityEngine;
 public class RoundController : MonoBehaviour
 {
     [SerializeField] GameObject pirate;
+    [SerializeField] GameObject informante;
 
     int roundNumber;
 
@@ -47,10 +48,11 @@ public class RoundController : MonoBehaviour
                 break;
             case 2:
                 spawnBehaviour.GerarRound(pirate, 3, 2f,0);
-                spawnBehaviour.GerarRound(pirate, 3, 2f, 1);
+                spawnBehaviour.GerarRound(informante, 3, 2f, 1);
                 break;
             case 3:
                 spawnBehaviour.GerarRound(pirate, 5, 2f, 0);
+                spawnBehaviour.GerarRound(informante, 3, 2f, 1);
                 break;
 
         }
