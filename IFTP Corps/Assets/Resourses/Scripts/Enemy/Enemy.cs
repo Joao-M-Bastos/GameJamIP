@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     public float speed;
 
+    public bool isReturning;
+
     // Start is called before the first frame update
     void Awake()
     {
