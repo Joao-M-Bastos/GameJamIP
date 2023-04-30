@@ -8,6 +8,8 @@ public class DeskBehavious : MonoBehaviour
 
     [SerializeField] private Dictionary<string, GameObject> listaDeTorres;
 
+    private GameObject currentTower;
+
     GMScript gmInstance;
 
     private void Start()
@@ -19,8 +21,14 @@ public class DeskBehavious : MonoBehaviour
 
     public void SelectDesc()
     {
-        if (gmInstance.getMoney() >= 100)
-            Instantiate(listaDeTorres["Advogado"], pointToSpawn);
+        if (currentTower == null && gmInstance.getMoney() >= 100)
+        {
+
+            currentTower = Instantiate(listaDeTorres["Advogado"], pointToSpawn);
+            gmInstance.playerSpendMoney(currentTower.GetComponent<Tower>().price);
+            Debug.Log(currentTower.GetComponent<Tower>().price);
+            gmInstance.getMoney();
+        }
         else
             Debug.Log("a");
         

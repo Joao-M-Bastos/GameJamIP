@@ -48,6 +48,7 @@ public class GMScript : MonoBehaviour
 
     public int getMoney()
     {
+        Debug.Log(money);
         return money;
     }
 
