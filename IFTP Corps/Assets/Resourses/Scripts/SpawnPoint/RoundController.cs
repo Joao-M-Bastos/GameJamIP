@@ -33,7 +33,9 @@ public class RoundController : MonoBehaviour
         {
             
             HandleEndRound(false);
-        }
+            if (roundNumber == 5)
+                GMScript.GameOver(true);
+        }        
     }
 
     public void HandleEndRound(bool b)
@@ -68,6 +70,15 @@ public class RoundController : MonoBehaviour
                 spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
                 spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
                 break;
+            case 4:
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
+                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
+                break;
+            case 5:
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
+                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
+                break;
+            
 
         }
         

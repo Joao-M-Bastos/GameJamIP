@@ -52,6 +52,11 @@ public class GMScript : MonoBehaviour
 
     public void ShowLifeIcons()
     {
+        if(life == 0)
+        {
+            GameOver(false);
+            return;
+        }
         for(int i = 0; i < lifeIcons.Length; i++)
         {
             lifeIcons[i].SetActive(false);
@@ -119,4 +124,12 @@ public class GMScript : MonoBehaviour
     }
 
     #endregion
+
+    public static void GameOver(bool b)
+    {
+        if (b)
+            GlobalScript.GoToScene("WinGameOver");
+        else
+            GlobalScript.GoToScene("LooseGameOver");
+    }
 }
