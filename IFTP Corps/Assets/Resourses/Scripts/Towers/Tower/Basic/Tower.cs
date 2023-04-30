@@ -25,6 +25,7 @@ public class Tower : MonoBehaviour
 
     public void CreateAreaView()
     {
+        areaView.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         areaView.transform.localScale *= distanceOfView /2.5f;
     }
 
