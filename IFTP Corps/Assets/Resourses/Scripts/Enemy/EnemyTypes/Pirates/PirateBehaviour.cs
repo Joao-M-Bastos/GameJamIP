@@ -17,18 +17,26 @@ public class PirateBehaviour : EnemyBehaviour
 
     public override void Special()
     {
-        if (enemy.isReturning)
-            enemy.indestrutive = false;
+        if (enemy.isReturning) {
+            ChangeSpeed(enemy.speed * 0.7f);
+            enemy.invisiable = false;
+        }
 
         if (!enemy.isReturning)
-            enemy.indestrutive = true;
+        {
+            enemy.invisiable = true;
+        }   
 
         hasEndedSpecial = true;
     }
 
     public override bool CanSpecial()
     {
-        if (!enemy.isReturning == !enemy.indestrutive)
+        if (enemy.isReturning && !enemy.invisiable)
+        {
+            return true;
+        }
+        if (enemy.isReturning && !enemy.indestrutive)
         {
             return true;
         }

@@ -103,12 +103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyNavMesh: {fileID: 0}
   gmInstance: {fileID: 0}
-  speed: 5
-  life: 5
-  bounty: 50
+  speed: 7
+  life: 9
+  bounty: 10
   isReturning: 0
-  invisiable: 0
-  indestrutive: 0
+  invisiable: 1
+  indestrutive: 1
 --- !u!114 &1754678279166458031
 MonoBehaviour:
   m_ObjectHideFlags: 0

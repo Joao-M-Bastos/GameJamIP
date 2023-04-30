@@ -19,8 +19,7 @@ public class CaminhoScript : MonoBehaviour
     {
 
         if(enemy.isReturning)
-        {
-            gameManager.playerTakeADamage();
+        {            
             enemy.enemyBehaviour.HasMadeIt();
         }
 

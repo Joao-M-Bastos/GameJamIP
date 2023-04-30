@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy_Informante : Enemy
+public class Enemy_Leaker : Enemy
 {
     // Start is called before the first frame update
     void Awake()
     {
         GetIsntances();
-        enemyBehaviour = new InformanteBehaviour(this, enemyNavMesh);
+        enemyBehaviour = new LeakerBehaviour(this, enemyNavMesh);
     }
 }

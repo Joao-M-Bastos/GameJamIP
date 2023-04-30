@@ -14,9 +14,11 @@ public abstract class TowerBehaviour
 
     GameObject[] allEnemiesInScreen, allEnemiesInRenge;
 
+
     public TowerBehaviour(Tower tower)
     {
         this.tower = tower;
+        cooldown = tower.attackCooldown;
     }
 
     public void LookAtFistEnemy(Transform towerTransform, Transform closestEnemy)
@@ -52,7 +54,8 @@ public abstract class TowerBehaviour
         {
             if (Vector3.Distance(towerTransform.position, allEnemies[i].transform.position) < tower.distanceOfView)
             {
-                temp++;
+                if(!allEnemies[i].GetComponent<Enemy>().invisiable)
+                    temp++;
             }
         }
 
@@ -67,8 +70,11 @@ public abstract class TowerBehaviour
             
             if (Vector3.Distance(towerTransform.position, allEnemies[i].transform.position) < tower.distanceOfView)
             {
-                closeEnemies[temp] = allEnemies[i];
-                temp++;
+                if (!allEnemies[i].GetComponent<Enemy>().invisiable)
+                {
+                    closeEnemies[temp] = allEnemies[i];
+                    temp++;
+                }
             }
         }
 

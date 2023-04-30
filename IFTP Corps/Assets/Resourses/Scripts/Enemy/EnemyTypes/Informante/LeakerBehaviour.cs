@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class InformanteBehaviour : EnemyBehaviour
+public class LeakerBehaviour : EnemyBehaviour
 {
 
-    public InformanteBehaviour(Enemy enemy, NavMeshAgent nv) : base(enemy, nv)
+    public LeakerBehaviour(Enemy enemy, NavMeshAgent nv) : base(enemy, nv)
     {
         this.enemyNavMesh = nv;
         this.enemy = enemy;
@@ -17,18 +17,14 @@ public class InformanteBehaviour : EnemyBehaviour
 
     public override void Special()
     {
-        if (enemy.isReturning)
-            enemy.indestrutive = false;
-
-        if (!enemy.isReturning)
-            enemy.indestrutive = true;
+        this.HasMadeIt();
 
         hasEndedSpecial = true;
     }
 
     public override bool CanSpecial()
     {
-        if (!enemy.isReturning == !enemy.indestrutive)
+        if (enemy.isReturning)
         {
             return true;
         }

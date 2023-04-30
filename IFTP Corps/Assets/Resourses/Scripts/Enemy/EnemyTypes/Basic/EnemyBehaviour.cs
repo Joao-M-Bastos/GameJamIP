@@ -41,6 +41,7 @@ public abstract class EnemyBehaviour
     }
     public void HasMadeIt()
     {
+        enemy.gmInstance.playerTakeADamage();
         enemy.SelfDestruction();
     }
 
@@ -82,8 +83,15 @@ public abstract class EnemyBehaviour
             enemy.gmInstance.OneMoreSteal();
     }
 
+    public void ChangeSpeed(float value)
+    {
+        this.enemy.speed = value;
+
+    }
+
     public void takeAHit(int dmg = 1)
     {
-        enemy.life -= dmg;
+        if(!enemy.indestrutive)
+            enemy.life -= dmg;
     }
 }
