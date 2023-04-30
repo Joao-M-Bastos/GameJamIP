@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ using UnityEngine.AI;
 public class Tower : MonoBehaviour
 {
     public TowerBehaviour towerBehaviour;
-    public GameObject projectile;
+    public GameObject projectile, areaView;
 
     public Transform finalPoint;
 
@@ -18,7 +19,13 @@ public class Tower : MonoBehaviour
     void Awake()
     {
         finalPoint = GameObject.FindGameObjectWithTag("IP").transform;
+        CreateAreaView();
         //towerBehaviour = new TowerBehaviour(this);
+    }
+
+    public void CreateAreaView()
+    {
+        areaView.transform.localScale *= distanceOfView /2.5f;
     }
 
     public void SelfDestruction()
