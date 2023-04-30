@@ -17,7 +17,6 @@ public class RoundController : MonoBehaviour
     {
         roundNumber = 0;
         hasStarted = false;
-        enemies = EnemyTowerDictionary.GetDicionaryDeInimigos();
         spawnBehaviour = GetComponent<SpawnBehaviour>();
     }
 
@@ -35,6 +34,7 @@ public class RoundController : MonoBehaviour
 
     private void Start()
     {
+        enemies = EnemyTowerDictionary.GetDicionaryDeInimigos();
         GenerateRound();
     }
 
