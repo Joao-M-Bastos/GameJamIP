@@ -6,31 +6,26 @@ public class DeskBehavious : MonoBehaviour
 {
     [SerializeField] private Transform pointToSpawn;
 
-    [SerializeField] private Dictionary<string, GameObject> listaDeTorres;
-
     private GameObject currentTower;
 
-    GMScript gmInstance;
 
-    private void Start()
-    {
-        gmInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GMScript>();
 
-        listaDeTorres = EnemyTowerDictionary.GetDicionaryDeTorres();    
-    }
-
-    public void SelectDesc()
+    public void PlaceTower(GameObject torre, GMScript gmInstance)
     {
         if (currentTower == null && gmInstance.getMoney() >= 100)
         {
-
-            currentTower = Instantiate(listaDeTorres["Advogado"], pointToSpawn);
+            currentTower = Instantiate(torre, pointToSpawn);
             gmInstance.playerSpendMoney(currentTower.GetComponent<Tower>().price);
-            Debug.Log(currentTower.GetComponent<Tower>().price);
-            gmInstance.getMoney();
+            SelectTower(true);
         }
-        else
-            Debug.Log("a");
+    }
+
+    public void SelectTower(bool b)
+    {
         
+        if (currentTower != null)
+        {
+            currentTower.GetComponent<Tower>().CreateAreaView(b);
+        }
     }
 }

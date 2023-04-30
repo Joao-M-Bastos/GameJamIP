@@ -23,8 +23,13 @@ public class Tower : MonoBehaviour
         //towerBehaviour = new TowerBehaviour(this);
     }
 
-    public void CreateAreaView()
+    public void CreateAreaView(bool b)
     {
+        this.areaView.SetActive(b);
+
+        if (!b)
+            return;
+
         areaView.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         areaView.transform.localScale *= distanceOfView /2.5f;
     }

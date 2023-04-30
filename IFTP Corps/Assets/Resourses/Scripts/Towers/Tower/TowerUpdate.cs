@@ -28,8 +28,6 @@ public class TowerUpdate : MonoBehaviour
         {
             tower.towerBehaviour.LookAtFistEnemy(this.transform, closestEnemy.transform);
         }
-
-        tower.CreateAreaView();
     }
 
 
