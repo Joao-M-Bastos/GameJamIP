@@ -6675,7 +6675,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life: 0
   money: 0
-  lifeIcons: []
+  lifeIcons:
+  - {fileID: 332770541}
+  - {fileID: 583671701}
+  - {fileID: 225075041}
   stealingIcon: {fileID: 374632920}
   stealingNum: 0
   moneyText: {fileID: 1970107181}

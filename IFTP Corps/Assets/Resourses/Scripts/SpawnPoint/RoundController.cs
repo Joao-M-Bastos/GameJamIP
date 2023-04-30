@@ -26,13 +26,13 @@ public class RoundController : MonoBehaviour
     {
         if(!hasStarted && spawnBehaviour.amountToSpawn > 0)
         {
-            HandleEndRound( true);
+            HandleEndRound(true);
         }
-
 
         if (hasStarted && spawnBehaviour.amountToSpawn < 1 && NumOfEnemiesAlive.getNumOfEnemiesAlive() < 1)
         {
-            HandleEndRound( false);
+            
+            HandleEndRound(false);
         }
     }
 

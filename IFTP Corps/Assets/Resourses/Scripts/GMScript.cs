@@ -56,7 +56,7 @@ public class GMScript : MonoBehaviour
         {
             lifeIcons[i].SetActive(false);
 
-            if(i+1 < getLife())
+            if(i < getLife())
                 lifeIcons[i].SetActive(true);
         }
     }

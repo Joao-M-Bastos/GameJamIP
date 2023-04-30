@@ -32,7 +32,6 @@ public class EnemyTowerDictionary : MonoBehaviour
         dicionarioDeTorres = new Dictionary<string, GameObject>();
         foreach (GameObject g in listOfTowers)
         {
-            Debug.Log(g.name);
             dicionarioDeTorres.Add(g.name,g);
         }
     }
