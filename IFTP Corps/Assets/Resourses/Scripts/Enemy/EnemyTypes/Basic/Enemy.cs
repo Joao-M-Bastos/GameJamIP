@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public EnemyBehaviour enemyBehaviour;
     public NavMeshAgent enemyNavMesh;
     public GMScript gmInstance;
+
     public float speed;
 
     public int life, bounty;

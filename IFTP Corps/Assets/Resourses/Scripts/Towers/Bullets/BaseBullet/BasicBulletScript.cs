@@ -25,11 +25,18 @@ public class BasicBulletScript : MonoBehaviour
         }
         if(target == null)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(DestroyBullet(10));
+            this.transform.position += transform.forward * speed;
         }
     }
 
-    private void OnTriggerEnter(Collider colision)
+    public IEnumerator DestroyBullet(float cooldown)
+    { 
+        yield return new WaitForSeconds(cooldown);
+        Destroy(this.gameObject);
+    }
+
+        private void OnTriggerEnter(Collider colision)
     {
         Enemy go;
         if (colision.gameObject.TryGetComponent<Enemy>(out go))

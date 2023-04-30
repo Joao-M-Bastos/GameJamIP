@@ -47,6 +47,10 @@ public abstract class EnemyBehaviour
     public void Die()
     {
         enemy.gmInstance.playerGainMoney(enemy.bounty);
+
+        if (enemy.isReturning)
+            enemy.gmInstance.OneLessSteal();
+
         enemy.SelfDestruction();
     }
     public bool willDie()
@@ -71,9 +75,11 @@ public abstract class EnemyBehaviour
         return false;
     }
 
-    public void FlipDirection()
+    public void FlipDirection(bool b)
     {
-        enemy.isReturning = !enemy.isReturning;
+        enemy.isReturning = b;
+        if (b)
+            enemy.gmInstance.OneMoreSteal();
     }
 
     public void takeAHit(int dmg = 1)

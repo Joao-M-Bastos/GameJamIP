@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GMScript : MonoBehaviour
 {
-    [SerializeField] private static int life;
-    [SerializeField] private static int money;
+    [SerializeField] private int life;
+    [SerializeField] private int money;
+
+    [SerializeField] private GameObject[] lifeIcons;
+
+
+    [SerializeField] private GameObject stealingIcon;
+    [SerializeField] private int stealingNum;
+
+
+    [SerializeField] private Text moneyText;
 
     private void Update()
     {
@@ -26,6 +36,7 @@ public class GMScript : MonoBehaviour
     public void ResetLife()
     {
         life = 3;
+        ShowLifeIcons();
     }
 
     public int getLife()
@@ -36,6 +47,18 @@ public class GMScript : MonoBehaviour
     public void playerTakeADamage()
     {
         life--;
+        ShowLifeIcons();
+    }
+
+    public void ShowLifeIcons()
+    {
+        for(int i = 0; i < lifeIcons.Length; i++)
+        {
+            lifeIcons[i].SetActive(false);
+
+            if(i+1 < getLife())
+                lifeIcons[i].SetActive(true);
+        }
     }
     #endregion
 
@@ -44,22 +67,56 @@ public class GMScript : MonoBehaviour
     public void ResetMoney()
     {
         money = 100;
+        UpdadeMoneyValue();
     }
 
     public int getMoney()
     {
-        Debug.Log(money);
         return money;
     }
 
     public void playerSpendMoney(int value)
     {
         money -= value;
+        UpdadeMoneyValue();
     }
 
     public void playerGainMoney(int value)
     {
         money += value;
+        UpdadeMoneyValue();
     }
+
+    public void UpdadeMoneyValue()
+    {
+        moneyText.text = getMoney() + " ";
+    }
+
+    #endregion
+
+    #region StealininIcon
+
+    public void OneMoreSteal()
+    {
+        this.stealingNum++;
+        ShowIcon();
+    }
+
+    public void OneLessSteal()
+    {
+        this.stealingNum--;
+        ShowIcon();
+    }
+
+    private void ShowIcon()
+    {
+        if (stealingNum <= 0)
+        {
+            stealingIcon.SetActive(false);
+            return;
+        }
+        stealingIcon.SetActive(true);
+    }
+
     #endregion
 }

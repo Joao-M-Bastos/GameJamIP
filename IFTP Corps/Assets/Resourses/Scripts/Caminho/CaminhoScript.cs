@@ -24,9 +24,7 @@ public class CaminhoScript : MonoBehaviour
             enemy.enemyBehaviour.HasMadeIt();
         }
 
-        enemy.isReturning = false;
-
-        
+        enemy.enemyBehaviour.FlipDirection(false);
 
         enemy.enemyBehaviour.SetDestination(transformB.position);
     }
@@ -34,7 +32,7 @@ public class CaminhoScript : MonoBehaviour
 
     public void GotOnPointsFinal(Enemy enemy)
     {
-        enemy.isReturning = true;
+        enemy.enemyBehaviour.FlipDirection(true);
 
         enemy.enemyBehaviour.SetDestination(transformA.position);
     }

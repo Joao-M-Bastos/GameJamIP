@@ -7,6 +7,8 @@ public class RoundController : MonoBehaviour
 {
     [SerializeField] Dictionary<String, GameObject> enemies;
 
+    [SerializeField] GameObject playButton;
+
     int roundNumber;
 
     SpawnBehaviour spawnBehaviour;
@@ -23,19 +25,31 @@ public class RoundController : MonoBehaviour
     private void Update()
     {
         if(!hasStarted && spawnBehaviour.amountToSpawn > 0)
-            hasStarted = true;
-        
-        if(hasStarted && spawnBehaviour.amountToSpawn < 1 && NumOfEnemiesAlive.getNumOfEnemiesAlive() < 1)
         {
-            GenerateRound();
-            hasStarted = false;
+            HandleEndRound( true);
         }
+
+
+        if (hasStarted && spawnBehaviour.amountToSpawn < 1 && NumOfEnemiesAlive.getNumOfEnemiesAlive() < 1)
+        {
+            HandleEndRound( false);
+        }
+    }
+
+    public void HandleEndRound(bool b)
+    {
+        hasStarted = b;
+        playButton.SetActive(!b);
+    }
+
+    public void OnPlayClick()
+    {
+        GenerateRound();
     }
 
     private void Start()
     {
         enemies = EnemyTowerDictionary.GetDicionaryDeInimigos();
-        GenerateRound();
     }
 
     private void GenerateRound()

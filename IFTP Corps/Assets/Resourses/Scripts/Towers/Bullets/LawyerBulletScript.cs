@@ -10,11 +10,12 @@ public class LawyerBulletScript : BasicBulletScript
         if(target != null)
         {
             this.transform.LookAt(target);
-            this.transform.position += transform.forward * speed *Time.deltaTime;
+            this.transform.position += transform.forward * speed * Time.deltaTime;
         }
         if (target == null)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(DestroyBullet(5));
+            this.transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
 
