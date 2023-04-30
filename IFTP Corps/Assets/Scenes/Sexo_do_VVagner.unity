@@ -236,7 +236,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &247278000 stripped
 GameObject:
@@ -283,7 +283,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 03af93d24ea564b40abf8132f0a02672,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03af93d24ea564b40abf8132f0a02672,
         type: 3}
@@ -367,12 +367,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03af93d24ea564b40abf8132f0a02672, type: 3}
---- !u!4 &652624877 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5310582171311823529, guid: 03af93d24ea564b40abf8132f0a02672,
-    type: 3}
-  m_PrefabInstance: {fileID: 280192936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &723898584
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,14 +393,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723898584}
-  m_LocalRotation: {x: -0.0136650875, y: -0.91200805, z: 0.40880954, w: -0.030485276}
-  m_LocalPosition: {x: 0.03, y: 88, z: 1.49}
-  m_LocalScale: {x: 0.018819401, y: 0.102397986, z: 0.028646244}
+  m_LocalRotation: {x: -0.3948092, y: -0.5822024, z: 0.40155482, w: -0.5864468}
+  m_LocalPosition: {x: -57.7, y: 113.3, z: -48.8}
+  m_LocalScale: {x: 1.6104013, y: 4.8035827, z: 0.78741205}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 652624877}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 48.289, y: -183.829, z: 0}
+  m_LocalEulerAnglesHint: {x: 111.465, y: -91.61798, z: 178.236}
 --- !u!114 &723898586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,7 +467,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 48.35627
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
