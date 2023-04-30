@@ -295,6 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dbInstance: {fileID: 0}
+  buttonEsclude: {fileID: 1019681461494881240}
+  buttonUpgrade: {fileID: 1019681461954737375}
 --- !u!1 &1019681463440320211
 GameObject:
   m_ObjectHideFlags: 0
