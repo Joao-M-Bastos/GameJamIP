@@ -6,6 +6,9 @@ public class DeskSelector : MonoBehaviour
 {
     //[SerializeField] private Transform pointOfSpawn;
 
+    [SerializeField] private Transform pointZero;
+    [SerializeField] private Transform pointFull;
+
     Camera main;
     private void Awake()
     {
@@ -14,12 +17,23 @@ public class DeskSelector : MonoBehaviour
     private void Update()
     {
 
-        Vector3 mousePos = Vector3.zero;//Input.mousePosition;
-        mousePos.y = 0f;
-        mousePos = main.WorldToScreenPoint(mousePos);
+        Vector3 mousePos = Input.mousePosition;
 
-        Debug.Log(mousePos - this.transform.position);
-        Debug.DrawLine(this.transform.position, mousePos - this.transform.position, Color.blue);
+        mousePos = main.ScreenToWorldPoint(mousePos);
+         
+        float temp = mousePos.x;
+
+        mousePos.x = mousePos.y;
+
+        mousePos.y = -temp;
+
+        mousePos.z = mousePos.y;
+        mousePos.y = 0f;
+
+        mousePos += pointZero.position;
+
+        Debug.Log(mousePos);
+        Debug.DrawLine(this.transform.position, mousePos , Color.blue);
         
 
         if (Input.GetMouseButton(0))
