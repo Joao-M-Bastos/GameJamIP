@@ -9,6 +9,12 @@ public class GMScript : MonoBehaviour
 
     public Text text;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+    }
+
     private void Awake()
     {
         

@@ -15,7 +15,7 @@ public class SpawnBehaviour : MonoBehaviour
     public IEnumerator WaitToSpawn(GameObject enemy, int amount, float inteval, float cooldown)
     {
         yield return new WaitForSeconds(cooldown);
-        Spawnar(enemy, amount, inteval);
+        StartCoroutine(Spawnar(enemy, amount, inteval));
     }
 
     private IEnumerator Spawnar(GameObject enemy, int amount, float inteval)

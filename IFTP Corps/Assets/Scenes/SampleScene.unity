@@ -823,6 +823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pirate: {fileID: 4193535776417774189, guid: 835844c65862f6648adbc382a2c16930, type: 3}
+  informante: {fileID: 4193535776417774189, guid: 1d6b3f6c01dc9814b992e6de50d0a7f8,
+    type: 3}
 --- !u!1 &1616441780
 GameObject:
   m_ObjectHideFlags: 0

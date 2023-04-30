@@ -89,13 +89,19 @@ public abstract class TowerBehaviour
         for (int i = 0; i < closeEnemies.Length; i++)
         {
 
-                float distance = closeEnemies[i].transform.position.y - tower.finalPoint.position.y;
 
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestEnemy = closeEnemies[i];
-                }
+            float distance = tower.finalPoint.position.z - closeEnemies[i].transform.position.z;
+
+            Debug.Log(i + " " + closeEnemies[i].gameObject.name + " " + distance);
+
+            if (closeEnemies[i].GetComponent<Enemy>().isReturning)
+                distance *= -1;
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = closeEnemies[i];
+            }
 
 
         }

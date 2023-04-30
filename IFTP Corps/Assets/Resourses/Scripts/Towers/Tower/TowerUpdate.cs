@@ -17,15 +17,17 @@ public class TowerUpdate : MonoBehaviour
 
     private void Update()
     {
-        closestEnemy = tower.towerBehaviour.GetCloseEnemies(this.transform);
+        if (tower.towerBehaviour.CanAttack())
+        {
+            closestEnemy = tower.towerBehaviour.GetCloseEnemies(this.transform);
+            if(closestEnemy != null)
+                tower.towerBehaviour.Attack(closestEnemy.transform);
+        }
 
         if (closestEnemy != null)
         {
             tower.towerBehaviour.LookAtFistEnemy(this.transform, closestEnemy.transform);
-        }
-        if (tower.towerBehaviour.CanAttack() && closestEnemy != null)
-        {
-            tower.towerBehaviour.Attack(closestEnemy.transform);
+            
         }
     }
 
