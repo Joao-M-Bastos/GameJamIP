@@ -23,7 +23,7 @@ public class LawyerBulletScript : BasicBulletScript
         Enemy go;
         if (colision.gameObject.TryGetComponent<Enemy>(out go))
         {
-            go.takeAHit(dmg);
+            go.enemyBehaviour.takeAHit(dmg);
             Destroy(this.gameObject);
         }
     }

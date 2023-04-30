@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class RoundController : MonoBehaviour
 {
-    [SerializeField] GameObject pirate;
-    [SerializeField] GameObject informante;
+    [SerializeField] Dictionary<String, GameObject> enemies;
 
     int roundNumber;
 
@@ -18,6 +17,7 @@ public class RoundController : MonoBehaviour
     {
         roundNumber = 0;
         hasStarted = false;
+        enemies = EnemyTowerDictionary.GetDicionaryDeInimigos();
         spawnBehaviour = GetComponent<SpawnBehaviour>();
     }
 
@@ -44,15 +44,15 @@ public class RoundController : MonoBehaviour
         switch (roundNumber)
         {
             case 1:
-                spawnBehaviour.GerarRound(pirate, 5, 1f, 0);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
                 break;
             case 2:
-                spawnBehaviour.GerarRound(pirate, 3, 2f,0);
-                spawnBehaviour.GerarRound(informante, 3, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 3, 2f,0);
+                spawnBehaviour.GerarRound(enemies["Informante"], 3, 2f, 1);
                 break;
             case 3:
-                spawnBehaviour.GerarRound(pirate, 5, 2f, 0);
-                spawnBehaviour.GerarRound(informante, 3, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
+                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
                 break;
 
         }

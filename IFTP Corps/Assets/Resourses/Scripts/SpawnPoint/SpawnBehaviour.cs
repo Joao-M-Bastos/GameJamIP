@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnBehaviour : MonoBehaviour
 {
     public int amountToSpawn;
+    [SerializeField]private Transform spawnPointTransform;
 
     public void GerarRound(GameObject enemy, int amount, float inteval, float cooldown)
     {
@@ -25,9 +26,7 @@ public class SpawnBehaviour : MonoBehaviour
             yield return new WaitForSeconds(inteval);
             NumOfEnemiesAlive.Add();
             this.amountToSpawn--;
-            Instantiate(enemy,this.transform.position, this.transform.rotation);
+            Instantiate(enemy, spawnPointTransform.position, spawnPointTransform.rotation);
         }
     }
-
-
 }

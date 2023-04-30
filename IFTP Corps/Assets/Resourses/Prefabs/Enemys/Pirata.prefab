@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2639395076315020368}
   - component: {fileID: 1754678279166458031}
   m_Layer: 0
-  m_Name: Pirate
+  m_Name: Pirata
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,8 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyNavMesh: {fileID: 0}
+  gmInstance: {fileID: 0}
   speed: 5
   life: 5
+  bounty: 0
   isReturning: 0
   invisiable: 0
   indestrutive: 0

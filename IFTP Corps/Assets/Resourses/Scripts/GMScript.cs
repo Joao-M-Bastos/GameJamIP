@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class GMScript : MonoBehaviour
 {
     [SerializeField] private static int life;
-
-    public Text text;
+    [SerializeField] private static int money;
 
     private void Update()
     {
@@ -17,13 +16,20 @@ public class GMScript : MonoBehaviour
 
     private void Awake()
     {
-        
-        life = 3;
-        getLife();
+        ResetMoney();
+
+        ResetLife();
     }
+
+    #region Life
+
+    public void ResetLife()
+    {
+        life = 3;
+    }
+
     public int getLife()
     {
-        text.text = "Vida: " + life;
         return life;
     }
 
@@ -31,4 +37,28 @@ public class GMScript : MonoBehaviour
     {
         life--;
     }
+    #endregion
+
+    #region Money
+
+    public void ResetMoney()
+    {
+        life = 100;
+    }
+
+    public int getMoney()
+    {
+        return money;
+    }
+
+    public void playerSpendMoney(int value)
+    {
+        money -= value;
+    }
+
+    public void playerGainMoney(int value)
+    {
+        money += value;
+    }
+    #endregion
 }

@@ -22,8 +22,6 @@ public class CaminhoScript : MonoBehaviour
         {
             gameManager.playerTakeADamage();
             enemy.enemyBehaviour.HasMadeIt();
-
-            Debug.Log(gameManager.getLife());
         }
 
         enemy.isReturning = false;

@@ -1516,7 +1516,7 @@ MonoBehaviour:
   finalPoint: {fileID: 0}
   attackCooldown: 3
   projectSpeed: 20
-  distanceOfView: 32
+  distanceOfView: 39
   damage: 1
 --- !u!1 &5763707138841559647
 GameObject:

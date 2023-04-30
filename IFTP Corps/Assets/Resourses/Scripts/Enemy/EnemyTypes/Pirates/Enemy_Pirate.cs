@@ -8,7 +8,7 @@ public class Enemy_Pirate : Enemy
     // Start is called before the first frame update
     void Awake()
     {
-        enemyNavMesh = GetComponent<NavMeshAgent>();
+        GetIsntances();
         enemyBehaviour = new PirateBehaviour(this, enemyNavMesh);
     }
 }

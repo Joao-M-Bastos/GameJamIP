@@ -8,24 +8,28 @@ public class Enemy : MonoBehaviour
 {
     public EnemyBehaviour enemyBehaviour;
     public NavMeshAgent enemyNavMesh;
-
+    public GMScript gmInstance;
     public float speed;
 
-    public int life;
+    public int life, bounty;
 
     public bool isReturning, invisiable, indestrutive;
 
     // Start is called before the first frame update
     void Awake()
     {
-        //enemyNavMesh = GetComponent<NavMeshAgent>();
+        GetIsntances();
         //enemyBehaviour = new EnemyBehaviour(this, enemyNavMesh);
     }
 
-    public void takeAHit(int dmg = 1)
+    public void GetIsntances()
     {
-        life -= dmg;
+        gmInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GMScript>();
+
+        enemyNavMesh = GetComponent<NavMeshAgent>();
     }
+
+
 
     public void SelfDestruction()
     {
