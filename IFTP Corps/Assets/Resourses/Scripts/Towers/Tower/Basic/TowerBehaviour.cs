@@ -92,8 +92,6 @@ public abstract class TowerBehaviour
 
             float distance = tower.finalPoint.position.z - closeEnemies[i].transform.position.z;
 
-            Debug.Log(i + " " + closeEnemies[i].gameObject.name + " " + distance);
-
             if (closeEnemies[i].GetComponent<Enemy>().isReturning)
                 distance *= -1;
 

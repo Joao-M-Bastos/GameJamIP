@@ -16,7 +16,7 @@ public class RoundController : MonoBehaviour
 
     private void Awake()
     {
-        roundNumber = 1;
+        roundNumber = 0;
         hasStarted = false;
         spawnBehaviour = GetComponent<SpawnBehaviour>();
     }
