@@ -43,7 +43,7 @@ public class GMScript : MonoBehaviour
 
     public void ResetMoney()
     {
-        life = 100;
+        money = 100;
     }
 
     public int getMoney()

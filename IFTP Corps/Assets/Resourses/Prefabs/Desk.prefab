@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4979317491423399649}
-  - component: {fileID: 9155756599756785103}
   - component: {fileID: 2124234051760473269}
   - component: {fileID: 1035996520657328355}
+  - component: {fileID: 5487392176197461602}
   m_Layer: 10
   m_Name: Desk
   m_TagString: Untagged
@@ -36,19 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9155756599756785103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 987630173545052746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7464fabc6e20484bbf924567a450aea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointOfSpawn: {fileID: 2045050257089453828}
 --- !u!65 &2124234051760473269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -74,10 +61,23 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5487392176197461602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987630173545052746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e050ad93709ff4cbaa76e1911af500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointToSpawn: {fileID: 2045050257089453828}
 --- !u!1 &6274167978326125642
 GameObject:
   m_ObjectHideFlags: 0

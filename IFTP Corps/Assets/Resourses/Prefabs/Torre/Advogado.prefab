@@ -1462,7 +1462,7 @@ GameObject:
   - component: {fileID: 3770369593953142593}
   - component: {fileID: 69525008330724987}
   m_Layer: 0
-  m_Name: LawyerTorre
+  m_Name: Advogado
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1516,8 +1516,9 @@ MonoBehaviour:
   finalPoint: {fileID: 0}
   attackCooldown: 3
   projectSpeed: 20
-  distanceOfView: 39
-  damage: 1
+  distanceOfView: 40
+  damage: 5
+  price: 0
 --- !u!1 &5763707138841559647
 GameObject:
   m_ObjectHideFlags: 0
