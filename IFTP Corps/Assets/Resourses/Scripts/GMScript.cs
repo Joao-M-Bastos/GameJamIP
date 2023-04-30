@@ -11,7 +11,7 @@ public class GMScript : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
-            Application.Quit();
+            GlobalScript.GoToScene("",0) ;
     }
 
     private void Awake()
