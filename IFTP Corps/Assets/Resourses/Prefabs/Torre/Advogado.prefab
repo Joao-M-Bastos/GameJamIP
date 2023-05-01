@@ -1514,11 +1514,11 @@ MonoBehaviour:
     type: 3}
   areaView: {fileID: 4793514228313374070}
   finalPoint: {fileID: 0}
-  attackCooldown: 3
-  projectSpeed: 20
-  distanceOfView: 40
+  attackCooldown: 1
+  projectSpeed: 30
+  distanceOfView: 25
   damage: 5
-  price: 100
+  price: 50
 --- !u!1 &5763707138841559647
 GameObject:
   m_ObjectHideFlags: 0

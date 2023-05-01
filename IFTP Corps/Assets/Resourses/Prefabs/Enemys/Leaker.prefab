@@ -110,7 +110,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.02
   m_Speed: 3.5
-  m_Acceleration: 10
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -147,9 +147,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyNavMesh: {fileID: 0}
   gmInstance: {fileID: 0}
-  speed: 3.5
-  life: 15
-  bounty: 5
+  speed: 7
+  life: 25
+  bounty: 10
   isReturning: 0
   invisiable: 0
   indestrutive: 0
