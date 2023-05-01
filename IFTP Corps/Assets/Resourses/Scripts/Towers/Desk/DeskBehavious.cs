@@ -12,7 +12,7 @@ public class DeskBehavious : MonoBehaviour
 
     public void PlaceTower(GameObject torre, GMScript gmInstance)
     {
-        if (currentTower == null && gmInstance.getMoney() >= 100)
+        if (currentTower == null && gmInstance.getMoney() >= currentTower.GetComponent<Tower>().price)
         {
             currentTower = Instantiate(torre, pointToSpawn);
             gmInstance.playerSpendMoney(currentTower.GetComponent<Tower>().price);
