@@ -108,7 +108,7 @@ MonoBehaviour:
   bounty: 10
   isReturning: 0
   invisiable: 1
-  indestrutive: 1
+  indestrutive: 0
 --- !u!114 &1754678279166458031
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,11 +32,7 @@ public class PirateBehaviour : EnemyBehaviour
 
     public override bool CanSpecial()
     {
-        if (enemy.isReturning && !enemy.invisiable)
-        {
-            return true;
-        }
-        if (enemy.isReturning && !enemy.indestrutive)
+        if (enemy.isReturning == enemy.invisiable)
         {
             return true;
         }

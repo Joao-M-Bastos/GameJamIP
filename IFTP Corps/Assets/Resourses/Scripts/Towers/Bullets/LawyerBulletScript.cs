@@ -18,14 +18,4 @@ public class LawyerBulletScript : BasicBulletScript
             this.transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
-
-    private void OnTriggerEnter(Collider colision)
-    {
-        Enemy go;
-        if (colision.gameObject.TryGetComponent<Enemy>(out go))
-        {
-            go.enemyBehaviour.takeAHit(dmg);
-            Destroy(this.gameObject);
-        }
-    }
 }

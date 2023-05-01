@@ -31,7 +31,7 @@ public class Tower : MonoBehaviour
             return;
 
         areaView.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-        areaView.transform.localScale *= distanceOfView /2.5f;
+        areaView.transform.localScale *= distanceOfView / 2.5f;
     }
 
     public void SelfDestruction()

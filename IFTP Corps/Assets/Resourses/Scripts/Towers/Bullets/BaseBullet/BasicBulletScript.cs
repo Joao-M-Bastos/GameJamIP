@@ -13,20 +13,19 @@ public class BasicBulletScript : MonoBehaviour
         this.target = target;
         this.dmg = damage;
         this.speed = speed;
-
     }
 
     private void Update()
     {
-        if(target != null)
+        if (target != null)
         {
             this.transform.LookAt(target);
-            this.transform.position += transform.forward * speed;            
+            this.transform.position += transform.forward * speed * Time.deltaTime;
         }
-        if(target == null)
+        if (target == null)
         {
-            StartCoroutine(DestroyBullet(10));
-            this.transform.position += transform.forward * speed;
+            StartCoroutine(DestroyBullet(5));
+            this.transform.position += transform.forward * speed * Time.deltaTime;
         }
     }
 
@@ -36,11 +35,14 @@ public class BasicBulletScript : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-        private void OnTriggerEnter(Collider colision)
+    private void OnTriggerEnter(Collider colision)
     {
         Enemy go;
         if (colision.gameObject.TryGetComponent<Enemy>(out go))
         {
+            if (go.invisiable)
+                return;
+
             go.enemyBehaviour.takeAHit(dmg);
             Destroy(this.gameObject);
         }
