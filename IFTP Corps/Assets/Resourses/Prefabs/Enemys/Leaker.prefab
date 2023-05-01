@@ -149,7 +149,7 @@ MonoBehaviour:
   gmInstance: {fileID: 0}
   speed: 7
   life: 20
-  bounty: 10
+  bounty: 100
   isReturning: 0
   invisiable: 0
   indestrutive: 0
