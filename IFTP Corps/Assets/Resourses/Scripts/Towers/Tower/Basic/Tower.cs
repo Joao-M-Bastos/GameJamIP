@@ -9,7 +9,7 @@ public class Tower : MonoBehaviour
     [SerializeField] public TowerBehaviour towerBehaviour;
     [SerializeField] public GameObject projectile, areaView;
 
-    [SerializeField] public Transform finalPoint;
+    [SerializeField] public Transform finalPoint, shotPoint;
 
     [SerializeField] public float attackCooldown, projectSpeed;
 
@@ -44,7 +44,7 @@ public class Tower : MonoBehaviour
 
     public void InstancieteProjectile(Transform transform)
     {
-        GameObject project = Instantiate(projectile,this.transform.position, transform.rotation);
+        GameObject project = Instantiate(projectile,shotPoint.position, transform.rotation);
         project.GetComponent<BasicBulletScript>().SetValues(transform, damage, projectSpeed);
     }
 }
