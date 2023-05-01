@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase_1.unity
     guid: 6838cbc331584d846a6c85d32164a838
   - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 71607cd9040b9984098a09b50e9c07ea
+  - enabled: 1
     path: Assets/Scenes/WinGameOver.unity
     guid: 940de3138878fd84184134f5be275204
   - enabled: 1
