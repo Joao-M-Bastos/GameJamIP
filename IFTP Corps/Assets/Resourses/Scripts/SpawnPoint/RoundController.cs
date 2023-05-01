@@ -13,7 +13,7 @@ public class RoundController : MonoBehaviour
 
     SpawnBehaviour spawnBehaviour;
 
-    bool hasStarted;
+    [SerializeField] bool hasStarted;
 
     private void Awake()
     {
@@ -64,19 +64,19 @@ public class RoundController : MonoBehaviour
                 break;
             case 2:
                 spawnBehaviour.GerarRound(enemies["Pirata"], 3, 2f,0);
-                spawnBehaviour.GerarRound(enemies["Informante"], 3, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 3, 2f, 1);
                 break;
             case 3:
                 spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
-                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 5, 2f, 1);
                 break;
             case 4:
                 spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
-                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 5, 2f, 1);
                 break;
             case 5:
                 spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
-                spawnBehaviour.GerarRound(enemies["Informante"], 5, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 5, 2f, 1);
                 break;
             
 
