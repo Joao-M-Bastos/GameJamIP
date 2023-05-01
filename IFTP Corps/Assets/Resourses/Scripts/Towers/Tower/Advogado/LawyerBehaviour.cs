@@ -15,6 +15,7 @@ public class LawyerBehaviour : TowerBehaviour
 
     public override void Attack(Transform transform)
     {
+        tower.towerAnim.SetTrigger("Attack");
         tower.InstancieteProjectile(transform);
         cooldown = 0;
     }

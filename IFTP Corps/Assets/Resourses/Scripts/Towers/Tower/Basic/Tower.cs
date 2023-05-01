@@ -15,10 +15,13 @@ public class Tower : MonoBehaviour
 
     [SerializeField] public int distanceOfView, damage, price;
 
+    [SerializeField] public Animator towerAnim;
+
 
     // Start is called before the first frame update
     void Awake()
     {
+        towerAnim = GetComponent<Animator>();
         finalPoint = GameObject.FindGameObjectWithTag("IP").transform;
         //towerBehaviour = new TowerBehaviour(this);
     }

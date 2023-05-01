@@ -1436,6 +1436,7 @@ MonoBehaviour:
   distanceOfView: 25
   damage: 5
   price: 50
+  towerAnim: {fileID: 4606945183471923826}
 --- !u!1001 &269036074128247953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1505,6 +1506,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d5cc96fbb5d29e4799d7730ff387601, type: 3}
+--- !u!95 &4606945183471923826 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4347353381856378595, guid: 7d5cc96fbb5d29e4799d7730ff387601,
+    type: 3}
+  m_PrefabInstance: {fileID: 269036074128247953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8430825803866012370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8555574322072090179, guid: 7d5cc96fbb5d29e4799d7730ff387601,
