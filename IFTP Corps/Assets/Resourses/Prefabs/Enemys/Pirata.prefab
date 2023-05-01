@@ -136,7 +136,7 @@ MonoBehaviour:
   enemyNavMesh: {fileID: 0}
   gmInstance: {fileID: 0}
   speed: 10
-  life: 9
+  life: 11
   bounty: 10
   isReturning: 0
   invisiable: 1
