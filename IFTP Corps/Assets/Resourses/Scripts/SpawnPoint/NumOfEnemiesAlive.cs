@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class NumOfEnemiesAlive
 {
-    static private int numOfEnemiesAlive;
+    [SerializeField] static private int numOfEnemiesAlive;
 
     public static void Add(int i = 1)
     {

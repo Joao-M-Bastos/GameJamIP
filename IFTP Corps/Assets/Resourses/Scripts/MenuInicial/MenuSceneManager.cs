@@ -8,7 +8,7 @@ public class MenuSceneManager : MonoBehaviour
 {
     public void OnChangeSceenClick(int i)
     {
-        GlobalScript.GoToScene("", 1);
+        GlobalScript.GoToScene("Fase_1");
     }
 
     public void CloseApplication()
