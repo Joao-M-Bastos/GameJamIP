@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2841426421465106596}
   - component: {fileID: 9020880994655294649}
   - component: {fileID: 2201688442582470628}
-  - component: {fileID: 5738915239169886672}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -1266,7 +1265,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 665
+  m_VersionIndex: 668
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1353,20 +1352,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4793514228313374070}
   m_Mesh: {fileID: 0}
---- !u!64 &5738915239169886672
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4793514228313374070}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &5763707136914800607
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1365,7 @@ GameObject:
   - component: {fileID: 69525008330724987}
   m_Layer: 0
   m_Name: Advogado
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1393,7 +1378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5763707136914800607}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1436,7 +1421,7 @@ MonoBehaviour:
   attackCooldown: 1
   projectSpeed: 30
   distanceOfView: 25
-  damage: 5
+  damage: 3
   price: 50
   towerAnim: {fileID: 4606945183471923826}
 --- !u!1 &8531835930885270208
@@ -1463,7 +1448,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8531835930885270208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.59, z: 0}
+  m_LocalPosition: {x: 0, y: 1.59, z: 0.593}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []

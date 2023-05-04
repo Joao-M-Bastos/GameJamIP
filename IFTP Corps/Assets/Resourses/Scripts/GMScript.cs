@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class GMScript : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GMScript : MonoBehaviour
     [SerializeField] private GameObject stealingIcon;
     [SerializeField] private int stealingNum;
 
+    [SerializeField] public RoundController rd;
 
     [SerializeField] private Text moneyText;
 
@@ -22,6 +24,42 @@ public class GMScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
             GlobalScript.GoToScene("",0) ;
+
+        OPButtons();
+    }
+
+    private void OPButtons()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            rd.roundNumber = 0;
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            rd.roundNumber = 1;
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            rd.roundNumber = 2;
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+            rd.roundNumber = 3;
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+            rd.roundNumber = 4;
+
+        if (Input.GetKeyDown(KeyCode.H))
+            ResetLife();
+
+        if (Input.GetKeyDown(KeyCode.M))
+            playerGainMoney(100);
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            foreach(GameObject g in enemies)
+            {
+                g.GetComponent<Enemy>().life = 0;
+            }
+        }
     }
 
     private void Awake()

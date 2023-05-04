@@ -28,6 +28,11 @@ public class TowerUpdate : MonoBehaviour
         {
             tower.towerBehaviour.LookAtFistEnemy(this.transform, closestEnemy.transform);
         }
+
+        if(this.transform.rotation != Quaternion.identity)
+        {
+            //this.transform.rotation = Quaternion.identity;
+        }
     }
 
 

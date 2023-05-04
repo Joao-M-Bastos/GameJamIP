@@ -9,7 +9,7 @@ public class RoundController : MonoBehaviour
 
     [SerializeField] GameObject playButton;
 
-    int roundNumber;
+    public int roundNumber;
 
     SpawnBehaviour spawnBehaviour;
 
@@ -33,7 +33,7 @@ public class RoundController : MonoBehaviour
         {
             
             HandleEndRound(false);
-            if (roundNumber == 5)
+            if (roundNumber == 6)
                 GMScript.GameOver(true);
         }        
     }
@@ -57,19 +57,25 @@ public class RoundController : MonoBehaviour
     private void GenerateRound()
     {
         roundNumber++;
+
         switch (roundNumber)
         {
             case 1:
                 //spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
-                spawnBehaviour.GerarRound(enemies["Leaker"], 5, 2f, 0);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 2, 2f, 0);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 2, 2f, 10);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 2, 2f, 24);
                 break;
             case 2:
-                spawnBehaviour.GerarRound(enemies["Pirata"], 3, 2f,0);
-                spawnBehaviour.GerarRound(enemies["Leaker"], 6, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f,0);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 4, 2f, 5);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 3, 1f, 21);
                 break;
             case 3:
-                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 1f, 0);
-                spawnBehaviour.GerarRound(enemies["Leaker"], 8, 2f, 1);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 5, 2f, 5);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 8, 2f, 0);
+                spawnBehaviour.GerarRound(enemies["Pirata"], 3, 4f, 16);
+                spawnBehaviour.GerarRound(enemies["Leaker"], 8, 1f, 45);
                 break;
             case 4:
                 spawnBehaviour.GerarRound(enemies["Pirata"], 6, 1f, 0);
@@ -83,5 +89,6 @@ public class RoundController : MonoBehaviour
 
         }
         
+
     }
 }

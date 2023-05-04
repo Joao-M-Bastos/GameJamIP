@@ -18,7 +18,6 @@ public class PirateBehaviour : EnemyBehaviour
     public override void Special()
     {
         if (enemy.isReturning) {
-            ChangeSpeed(enemy.speed * 0.7f);
             enemy.invisiable = false;
         }
 

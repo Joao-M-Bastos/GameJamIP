@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public NavMeshAgent enemyNavMesh;
     public GMScript gmInstance;
 
+    public float baseSpeed;
     public float speed;
 
     public int life, bounty;
@@ -28,6 +29,8 @@ public class Enemy : MonoBehaviour
         gmInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GMScript>();
 
         enemyNavMesh = GetComponent<NavMeshAgent>();
+
+        speed = baseSpeed;
     }
 
 

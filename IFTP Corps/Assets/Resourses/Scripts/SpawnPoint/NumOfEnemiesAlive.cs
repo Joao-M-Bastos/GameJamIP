@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class NumOfEnemiesAlive
 {
-    [SerializeField] static private int numOfEnemiesAlive;
+    static private int numOfEnemiesAlive;
 
     public static void Add(int i = 1)
     {
@@ -23,6 +23,7 @@ public static class NumOfEnemiesAlive
 
     public static int getNumOfEnemiesAlive()
     {
+        
         return numOfEnemiesAlive;
     }
 }

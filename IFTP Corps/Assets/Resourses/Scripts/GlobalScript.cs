@@ -12,5 +12,7 @@ public static class GlobalScript
 
         if (sceneID != null)
             SceneManager.LoadScene((int)sceneID);
+
+        NumOfEnemiesAlive.Zero();
     }
 }

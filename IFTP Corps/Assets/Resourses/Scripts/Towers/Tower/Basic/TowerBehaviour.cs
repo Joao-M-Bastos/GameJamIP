@@ -23,7 +23,9 @@ public abstract class TowerBehaviour
 
     public void LookAtFistEnemy(Transform towerTransform, Transform closestEnemy)
     {
-        towerTransform.LookAt(closestEnemy);
+        Vector3 lookaAt = closestEnemy.position;
+        lookaAt.y = 0;
+        towerTransform.LookAt(lookaAt);
     }
 
     public bool CanAttack()

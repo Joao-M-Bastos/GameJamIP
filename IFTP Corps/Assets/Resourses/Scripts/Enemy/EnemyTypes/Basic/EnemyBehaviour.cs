@@ -16,8 +16,10 @@ public abstract class EnemyBehaviour
     {
         this.enemyNavMesh = nv;
         this.enemy = enemy;
+        
+        this.enemy.life += (enemy.gmInstance.rd.roundNumber - 2) * (int)(this.enemy.life/6);
 
-        enemyNavMesh.speed = enemy.speed;
+        ChangeSpeed(enemy.baseSpeed * 1.4f);
     }
 
     public void WalkToDestination()
@@ -41,6 +43,9 @@ public abstract class EnemyBehaviour
     }
     public void HasMadeIt()
     {
+        if (enemy.isReturning)
+            enemy.gmInstance.OneLessSteal();
+
         enemy.gmInstance.playerTakeADamage();
         enemy.SelfDestruction();
     }
@@ -86,12 +91,19 @@ public abstract class EnemyBehaviour
     public void ChangeSpeed(float value)
     {
         this.enemy.speed = value;
+        this.enemy.enemyNavMesh.speed = enemy.speed;
+    }
 
+    public void ReturnToBaseSpeed()
+    {
+        this.enemy.speed = enemy.baseSpeed * 1.4f;
+        this.enemy.enemyNavMesh.speed = enemy.speed;
     }
 
     public void takeAHit(int dmg = 1)
     {
         if(!enemy.indestrutive)
             enemy.life -= dmg;
+
     }
 }
